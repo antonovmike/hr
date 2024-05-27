@@ -1,30 +1,35 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
+        <!-- Demo data for Doctor -->
+        <record id="doctor_demo_1" model="hr_hospital.doctor">
+            <field name="name">Dr. Alice</field>
+            <field name="specialization">General internist</field>
+        </record>
+        <record id="doctor_demo_2" model="hr_hospital.doctor">
+            <field name="name">Dr. Bob</field>
+            <field name="specialization">General internist</field>
+        </record>
+        <record id="doctor_demo_3" model="hr_hospital.doctor">
+            <field name="name">Dr. Claire</field>
+            <field name="specialization">General internist</field>
+        </record>
 
-          <record id="object1" model="antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+        <!-- Demo data for Patient -->
+        <record id="patient_demo_1" model="hr_hospital.patient">
+            <field name="name">Daria</field>
+            <field name="age">95</field>
+            <field name="gender">female</field>
+        </record>
+        <record id="patient_demo_2" model="hr_hospital.patient">
+            <field name="name">Eugene</field>
+            <field name="age">25</field>
+            <field name="gender">male</field>
+        </record>
+        <record id="patient_demo_3" model="hr_hospital.patient">
+            <field name="name">Ferris</field>
+            <field name="age">45</field>
+            <field name="gender">male</field>
+        </record>
 
-          <record id="object2" model="antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
-
-          <record id="object3" model="antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
-
-          <record id="object4" model="antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
     </data>
 </odoo>
