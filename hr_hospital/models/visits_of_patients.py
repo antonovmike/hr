@@ -9,4 +9,4 @@ class Visits(models.Model):
     date = fields.Date(string="Date")
     patient = fields.Many2one('hr_hospital.patient', string="Patient")
     doctor = fields.Many2one('hr_hospital.doctor', string="Doctor")
-    disease = fields.Many2one('hr.diseases', string="Disease")
+    disease = fields.Many2one('hr_hospital.diseases', string="Disease")
