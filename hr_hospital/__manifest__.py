@@ -1,7 +1,7 @@
 {
     'name': "HR Hospital",
     'version': '16.0.1.0.0',
-    'category': 'Uncategorized',
+    'category': 'Human Resources',
     'summary': """Odoo test task""",
     'license': 'LGPL-3',
     'author': "Antonov Mike",

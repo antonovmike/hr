@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_antonovmike/hr/hr_hospital_antonovmike/hr/hr_hospital,antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital,model_antonovmike/hr/hr_hospital_antonovmike/hr/hr_hospital,base.group_user,1,1,1,1
+access_doctor_user,access_doctor_user,model_access_doctor_user,base.group_user,1,1,1,1
+access_patient_user,access_patient_user,model_access_patient_user,base.group_user,1,1,1,1
+access_visits_user,access_visits_user,model_access_visits_user,base.group_user,1,1,1,1
+access_diseases_user,access_diseases_user,model_access_diseases_user,base.group_user,1,1,1,1
