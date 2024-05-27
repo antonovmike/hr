@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_antonovmike/hr/hr_hospital_antonovmike/hr/hr_hospital,antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital,model_antonovmike/hr/hr_hospital_antonovmike/hr/hr_hospital,base.group_user,1,1,1,1
