@@ -1,5 +1,28 @@
 <odoo>
   <data>
+
+    <!-- Actions -->
+    <record id="action_view_patients" model="ir.actions.act_window">
+        <field name="name">View Patients</field>
+        <field name="res_model">hr_hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+    <record id="action_view_doctors" model="ir.actions.act_window">
+        <field name="name">View Doctors</field>
+        <field name="res_model">hr_hospital.doctor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Hospital" id="menu_hr_hospital" sequence="10" />
+
+    <!-- Sub-menu items -->
+    <menuitem name="Patients" id="menu_hr_hospital_patients" parent="menu_hr_hospital" action="hr_hospital.action_view_patients" sequence="10"/>
+    <menuitem name="Doctors" id="menu_hr_hospital_doctors" parent="menu_hr_hospital" action="hr_hospital.action_view_doctors" sequence="20"/>
+
+
     <!-- explicit list view definition -->
 <!--
     <record model="ir.ui.view" id="antonovmike/hr/hr_hospital.list">
