@@ -6,3 +6,9 @@ class Patient(models.Model):
     _description = 'Patient'
 
     name = fields.Char(string="Name")
+    age = fields.Integer(string='Age')
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+    ], string='Gender')

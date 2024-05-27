@@ -22,62 +22,59 @@
     <menuitem name="Patients" id="menu_hr_hospital_patients" parent="menu_hr_hospital" action="hr_hospital.action_view_patients" sequence="10"/>
     <menuitem name="Doctors" id="menu_hr_hospital_doctors" parent="menu_hr_hospital" action="hr_hospital.action_view_doctors" sequence="20"/>
 
-
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="antonovmike/hr/hr_hospital.list">
-      <field name="name">antonovmike/hr/hr_hospital list</field>
-      <field name="model">antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
+    <!-- Representations for model Patients -->
+    <record id="patient_tree" model="ir.ui.view">
+        <field name="name">Patients Tree</field>
+        <field name="model">hr_hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree string="Patients">
+                <field name="name"/>
+                <field name="age"/>
+                <field name="gender"/>
+            </tree>
+        </field>
     </record>
--->
-
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="antonovmike/hr/hr_hospital.action_window">
-      <field name="name">antonovmike/hr/hr_hospital window</field>
-      <field name="res_model">antonovmike/hr/hr_hospital.antonovmike/hr/hr_hospital</field>
-      <field name="view_mode">tree,form</field>
+    <record id="patient_form" model="ir.ui.view">
+        <field name="name">Patients Form</field>
+        <field name="model">hr_hospital.patient</field>
+        <field name="arch" type="xml">
+            <form string="Patients">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="gender"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
     </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="antonovmike/hr/hr_hospital.action_server">
-      <field name="name">antonovmike/hr/hr_hospital server</field>
-      <field name="model_id" ref="model_antonovmike/hr/hr_hospital_antonovmike/hr/hr_hospital"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
+    
+    <!-- Representations for model Doctors -->
+    <record id="doctor_tree" model="ir.ui.view">
+        <field name="name">Doctors Tree</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree string="Doctors">
+                <field name="name"/>
+                <field name="specialization"/>
+            </tree>
+        </field>
     </record>
--->
+    <record id="doctor_form" model="ir.ui.view">
+        <field name="name">Doctors Form</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Doctors">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="specialization"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="antonovmike/hr/hr_hospital" id="antonovmike/hr/hr_hospital.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="antonovmike/hr/hr_hospital.menu_1" parent="antonovmike/hr/hr_hospital.menu_root"/>
-    <menuitem name="Menu 2" id="antonovmike/hr/hr_hospital.menu_2" parent="antonovmike/hr/hr_hospital.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="antonovmike/hr/hr_hospital.menu_1_list" parent="antonovmike/hr/hr_hospital.menu_1"
-              action="antonovmike/hr/hr_hospital.action_window"/>
-    <menuitem name="Server to list" id="antonovmike/hr/hr_hospital" parent="antonovmike/hr/hr_hospital.menu_2"
-              action="antonovmike/hr/hr_hospital.action_server"/>
--->
   </data>
 </odoo>
