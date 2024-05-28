@@ -13,3 +13,4 @@ class Patient(models.Model):
         ('other', 'Other'),
     ], string='Gender')
     doctor_id = fields.Many2one('hr_hospital.doctor', string="Doctor")
+    # desease_ids = fields.Many2many('hr_hospital.diseases', string="Diseases")
