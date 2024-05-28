@@ -12,7 +12,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/disease_data.xml',
+        'data/disease_data.xml',
         'demo/demo.xml',
     ],
     'demo': [],
