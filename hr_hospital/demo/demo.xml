@@ -19,16 +19,19 @@
             <field name="name">Daria</field>
             <field name="age">95</field>
             <field name="gender">female</field>
+            <field name="doctor_id" ref="doctor_demo_1"/>
         </record>
         <record id="patient_demo_2" model="hr_hospital.patient">
             <field name="name">Eugene</field>
             <field name="age">25</field>
             <field name="gender">male</field>
+            <field name="doctor_id" ref="doctor_demo_2"/>
         </record>
         <record id="patient_demo_3" model="hr_hospital.patient">
             <field name="name">Ferris</field>
             <field name="age">45</field>
             <field name="gender">male</field>
+            <field name="doctor_id" ref="doctor_demo_3"/>
         </record>
 
     </data>
