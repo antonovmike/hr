@@ -6,4 +6,3 @@ class Diseases(models.Model):
     _description = 'Diseases'
 
     name = fields.Char(string='Name', required=True)
-    description = fields.Text(string='Description')

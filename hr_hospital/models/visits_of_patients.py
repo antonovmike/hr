@@ -10,3 +10,4 @@ class Visits(models.Model):
     patient = fields.Many2one('hr_hospital.patient', string="Patient")
     doctor = fields.Many2one('hr_hospital.doctor', string="Doctor")
     disease = fields.Many2one('hr_hospital.diseases', string="Disease")
+    description = fields.Text(string='Description')

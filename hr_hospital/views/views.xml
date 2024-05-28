@@ -105,6 +105,7 @@
                 <field name="patient"/>
                 <field name="doctor"/>
                 <field name="disease"/>
+                <field name="description"/>
                 <field name="date"/>
             </tree>
         </field>
@@ -119,6 +120,7 @@
                         <field name="patient"/>
                         <field name="doctor"/>
                         <field name="disease"/>
+                        <field name="description"/>
                         <field name="date"/>
                     </group>
                 </sheet>
