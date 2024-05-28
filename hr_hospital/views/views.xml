@@ -49,7 +49,7 @@
             </form>
         </field>
     </record>
-    
+
     <!-- Representations for model Doctors -->
     <record id="doctor_tree" model="ir.ui.view">
         <field name="name">Doctors Tree</field>

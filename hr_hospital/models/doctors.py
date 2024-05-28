@@ -6,4 +6,9 @@ class Doctor(models.Model):
     _description = 'Doctor'
 
     name = fields.Char(string="Name")
-    specialization = fields.Char(string="Specialization")
+    specialization = fields.Selection(
+        default='other',
+        selection=[('internist', ('Internist')), 
+                   ('oculist', ('Oculist')), 
+                   ('surgeon', ('Surgeon'))],
+    )

@@ -3,15 +3,15 @@
         <!-- Demo data for Doctor -->
         <record id="doctor_demo_1" model="hr_hospital.doctor">
             <field name="name">Dr. Alice</field>
-            <field name="specialization">Internist</field>
+            <field name="specialization">internist</field>
         </record>
         <record id="doctor_demo_2" model="hr_hospital.doctor">
             <field name="name">Dr. Bob</field>
-            <field name="specialization">Oculist</field>
+            <field name="specialization">oculist</field>
         </record>
         <record id="doctor_demo_3" model="hr_hospital.doctor">
             <field name="name">Dr. Claire</field>
-            <field name="specialization">Surgeon</field>
+            <field name="specialization">surgeon</field>
         </record>
 
         <!-- Demo data for Patient -->
