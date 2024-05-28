@@ -40,36 +40,6 @@
               action="hr_hospital.action_view_visits" 
               sequence="20"/>
 
-    <!-- Representations for model Visits -->
-    <record id="visit_tree" model="ir.ui.view">
-        <field name="name">Visits Tree</field>
-        <field name="model">hr_hospital.visits</field>
-        <field name="arch" type="xml">
-            <tree string="Visits">
-                <field name="patient"/>
-                <field name="doctor"/>
-                <field name="disease"/>
-                <field name="date"/>
-            </tree>
-        </field>
-    </record>
-    <record id="visit_form" model="ir.ui.view">
-        <field name="name">Visits Form</field>
-        <field name="model">hr_hospital.visits</field>
-        <field name="arch" type="xml">
-            <form string="Visits">
-                <sheet>
-                    <group>
-                        <field name="patient"/>
-                        <field name="doctor"/>
-                        <field name="disease"/>
-                        <field name="date"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
     <!-- Representations for model Patients -->
     <record id="patient_tree" model="ir.ui.view">
         <field name="name">Patients Tree</field>
@@ -120,6 +90,36 @@
                     <group>
                         <field name="name"/>
                         <field name="specialization"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Representations for model Visits -->
+    <record id="visit_tree" model="ir.ui.view">
+        <field name="name">Visits Tree</field>
+        <field name="model">hr_hospital.visits</field>
+        <field name="arch" type="xml">
+            <tree string="Visits">
+                <field name="patient"/>
+                <field name="doctor"/>
+                <field name="disease"/>
+                <field name="date"/>
+            </tree>
+        </field>
+    </record>
+    <record id="visit_form" model="ir.ui.view">
+        <field name="name">Visits Form</field>
+        <field name="model">hr_hospital.visits</field>
+        <field name="arch" type="xml">
+            <form string="Visits">
+                <sheet>
+                    <group>
+                        <field name="patient"/>
+                        <field name="doctor"/>
+                        <field name="disease"/>
+                        <field name="date"/>
                     </group>
                 </sheet>
             </form>
