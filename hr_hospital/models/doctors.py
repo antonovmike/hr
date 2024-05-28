@@ -8,7 +8,7 @@ class Doctor(models.Model):
     name = fields.Char(string="Name")
     specialization = fields.Selection(
         default='other',
-        selection=[('internist', ('Internist')), 
-                   ('oculist', ('Oculist')), 
+        selection=[('internist', ('Internist')),
+                   ('oculist', ('Oculist')),
                    ('surgeon', ('Surgeon'))],
     )
