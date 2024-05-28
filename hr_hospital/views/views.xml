@@ -1,6 +1,5 @@
 <odoo>
   <data>
-
     <!-- Actions -->
     <record id="action_view_patients" model="ir.actions.act_window">
         <field name="name">View Patients</field>
@@ -49,6 +48,7 @@
             <tree string="Visits">
                 <field name="patient"/>
                 <field name="doctor"/>
+                <field name="disease"/>
                 <field name="date"/>
             </tree>
         </field>
@@ -62,6 +62,7 @@
                     <group>
                         <field name="patient"/>
                         <field name="doctor"/>
+                        <field name="disease"/>
                         <field name="date"/>
                     </group>
                 </sheet>
