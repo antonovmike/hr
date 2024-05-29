@@ -12,4 +12,6 @@ class Patient(models.Model):
         ('female', 'Female'),
         ('other', 'Other'),
     ], string='Gender')
-    doctor_id = fields.Many2one('hr_hospital.doctor', string="Doctor")
+    passport_details = fields.Char(string="Passport Details")
+    contact_person = fields.Char(string="Contact Person")
+    personal_doctor = fields.Many2one('hr_hospital.doctor', string="Doctor")

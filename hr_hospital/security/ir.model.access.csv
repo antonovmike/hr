@@ -3,3 +3,4 @@ access_doctor_user,access_doctor_user,model_hr_hospital_doctor,base.group_user,1
 access_patient_user,access_patient_user,model_hr_hospital_patient,base.group_user,1,1,1,1
 access_visits_user,access_visits_user,model_hr_hospital_visits,base.group_user,1,1,1,1
 access_diseases_user,access_diseases_user,model_hr_hospital_diseases,base.group_user,1,1,1,1
+access_person_user,access_person_user,model_hr_hospital_person,base.group_user,1,1,1,1

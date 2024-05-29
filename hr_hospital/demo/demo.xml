@@ -19,19 +19,25 @@
             <field name="name">Daria</field>
             <field name="age">95</field>
             <field name="gender">female</field>
-            <field name="doctor_id" ref="doctor_demo_1"/>
+            <field name="passport_details">Passport 1</field>
+            <field name="contact_person">Some contact person 1</field>
+            <field name="personal_doctor" ref="doctor_demo_1"/>
         </record>
         <record id="patient_demo_2" model="hr_hospital.patient">
             <field name="name">Eugene</field>
             <field name="age">25</field>
             <field name="gender">male</field>
-            <field name="doctor_id" ref="doctor_demo_2"/>
+            <field name="passport_details">Passport 2</field>
+            <field name="contact_person">Some contact person 2</field>
+            <field name="personal_doctor" ref="doctor_demo_2"/>
         </record>
         <record id="patient_demo_3" model="hr_hospital.patient">
             <field name="name">Ferris</field>
             <field name="age">45</field>
             <field name="gender">male</field>
-            <field name="doctor_id" ref="doctor_demo_3"/>
+            <field name="passport_details">Passport 3</field>
+            <field name="contact_person">Some contact person 3</field>
+            <field name="personal_doctor" ref="doctor_demo_3"/>
         </record>
 
         <!-- Demo data for Types of diseases -->
@@ -71,5 +77,30 @@
             <field name="description">Description 3</field>
         </record>
 
+        <!-- Demo data for Person -->
+        <record id="person_demo_1" model="hr_hospital.person">
+            <field name="last_name">Doe</field>
+            <field name="first_name">John</field>
+            <field name="date_of_birth">1990-01-01</field>
+            <field name="gender">male</field>
+            <field name="phone">1234567890</field>
+            <field name="email">john@example.com</field>
+        </record>
+        <record id="person_demo_2" model="hr_hospital.person">
+            <field name="last_name">Smith</field>
+            <field name="first_name">Jane</field>
+            <field name="date_of_birth">1995-05-05</field>
+            <field name="gender">female</field>
+            <field name="phone">0987654321</field>
+            <field name="email">jane@example.com</field>
+        </record>
+        <record id="person_demo_3" model="hr_hospital.person">
+            <field name="last_name">Johnson</field>
+            <field name="first_name">Jade</field>
+            <field name="date_of_birth">2000-12-31</field>
+            <field name="gender">male</field>
+            <field name="phone">5555555555</field>
+            <field name="email">jade@example.com</field>
+        </record>
     </data>
 </odoo>

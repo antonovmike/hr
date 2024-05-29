@@ -19,6 +19,12 @@
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
     </record>
+    <record id="action_view_person" model="ir.actions.act_window">
+        <field name="name">View Persons</field>
+        <field name="res_model">hr_hospital.person</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
 
     <!-- Top menu item -->
     <menuitem name="Hospital" id="menu_hr_hospital" sequence="10" />
@@ -38,7 +44,12 @@
               id="menu_hr_hospital_visits" 
               parent="menu_hr_hospital" 
               action="hr_hospital.action_view_visits" 
-              sequence="20"/>
+              sequence="30"/>
+    <menuitem name="Person" 
+              id="menu_hr_hospital_person" 
+              parent="menu_hr_hospital" 
+              action="hr_hospital.action_view_person" 
+              sequence="40"/>
 
     <!-- Representations for model Patients -->
     <record id="patient_tree" model="ir.ui.view">
@@ -49,7 +60,9 @@
                 <field name="name"/>
                 <field name="age"/>
                 <field name="gender"/>
-                <field name="doctor_id"/>
+                <field name="passport_details"/>
+                <field name="contact_person"/>
+                <field name="personal_doctor"/>
             </tree>
         </field>
     </record>
@@ -63,7 +76,9 @@
                         <field name="name"/>
                         <field name="age"/>
                         <field name="gender"/>
-                        <field name="doctor_id"/>
+                        <field name="passport_details"/>
+                        <field name="contact_person"/>
+                        <field name="personal_doctor"/>
                     </group>
                 </sheet>
             </form>
@@ -122,6 +137,44 @@
                         <field name="disease"/>
                         <field name="description"/>
                         <field name="date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Representations for model Person -->
+    <record id="person_tree" model="ir.ui.view">
+        <field name="name">Person Tree</field>
+        <field name="model">hr_hospital.person</field>
+        <field name="arch" type="xml">
+            <tree string="Person">
+                <field name="last_name"/>
+                <field name="first_name"/>
+                <field name="gender"/>
+                <field name="date_of_birth"/>
+                <field name="age"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="photo"/>
+            </tree>
+        </field>
+    </record>
+    <record id="person_form" model="ir.ui.view">
+        <field name="name">Person Form</field>
+        <field name="model">hr_hospital.person</field>
+        <field name="arch" type="xml">
+            <form string="Person">
+                <sheet>
+                    <group>
+                        <field name="last_name"/>
+                        <field name="first_name"/>
+                        <field name="gender"/>
+                        <field name="date_of_birth"/>
+                        <field name="age"/>
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="photo" widget="image" filename="photo" class="img_edit"/>
                     </group>
                 </sheet>
             </form>
