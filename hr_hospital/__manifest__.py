@@ -11,6 +11,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        'views/hospital_menu.xml',
         'views/views.xml',
         'data/disease_data.xml',
         'demo/demo.xml',

@@ -1,5 +1,4 @@
 <odoo>
-  <data>
     <!-- Actions -->
     <record id="action_view_patients" model="ir.actions.act_window">
         <field name="name">View Patients</field>
@@ -25,31 +24,65 @@
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
     </record>
+    <record id="action_view_diagnosis" model="ir.actions.act_window">
+        <field name="name">View Diagnosis</field>
+        <field name="res_model">hr_hospital.diagnosis</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+    <record id="action_view_doctor_schedule" model="ir.actions.act_window">
+        <field name="name">View Schedule</field>
+        <field name="res_model">hr_hospital.doctor_schedule</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+    <record id="action_view_doctor_history" model="ir.actions.act_window">
+        <field name="name">View Doctor History</field>
+        <field name="res_model">hr_hospital.doctor_history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
 
-    <!-- Top menu item -->
-    <menuitem name="Hospital" id="menu_hr_hospital" sequence="10" />
+    <!-- Representations for model Doctor's History -->
+    <record id="doctor_history_tree" model="ir.ui.view">
+        <field name="name">Doctor's History Tree</field>
+        <field name="model">hr_hospital.doctor_history</field>
+        <field name="arch" type="xml">
+            <tree string="Doctor's History">
+                <field name="appointment_date"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+            </tree>
+        </field>
+    </record>
 
-    <!-- Sub-menu items -->
-    <menuitem name="Patients" 
-              id="menu_hr_hospital_patients" 
-              parent="menu_hr_hospital" 
-              action="hr_hospital.action_view_patients" 
-              sequence="10"/>
-    <menuitem name="Doctors" 
-              id="menu_hr_hospital_doctors" 
-              parent="menu_hr_hospital" 
-              action="hr_hospital.action_view_doctors" 
-              sequence="20"/>
-    <menuitem name="Visits" 
-              id="menu_hr_hospital_visits" 
-              parent="menu_hr_hospital" 
-              action="hr_hospital.action_view_visits" 
-              sequence="30"/>
-    <menuitem name="Person" 
-              id="menu_hr_hospital_person" 
-              parent="menu_hr_hospital" 
-              action="hr_hospital.action_view_person" 
-              sequence="40"/>
+    <record id="doctor_history_form" model="ir.ui.view">
+        <field name="name">Doctor's History Form</field>
+        <field name="model">hr_hospital.doctor_history</field>
+        <field name="arch" type="xml">
+            <form string="Doctor's History">
+                <sheet>
+                    <group>
+                        <field name="appointment_date"/>
+                        <field name="patient_id"/>
+                        <field name="doctor_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Representations for model Doctor's Schedule -->
+    <record id="doctor_schedule_tree" model="ir.ui.view">
+        <field name="name">Doctor's Schedule Tree</field>
+        <field name="model">hr_hospital.doctor_schedule</field>
+        <field name="arch" type="xml">
+            <tree string="Doctor's Schedule">
+                <field name="doctor_id"/>
+                <field name="date_time"/>
+            </tree>
+        </field>
+    </record>
 
     <!-- Representations for model Patients -->
     <record id="patient_tree" model="ir.ui.view">
@@ -57,12 +90,13 @@
         <field name="model">hr_hospital.patient</field>
         <field name="arch" type="xml">
             <tree string="Patients">
+                <field name="person_id"/>
                 <field name="name"/>
                 <field name="age"/>
                 <field name="gender"/>
                 <field name="passport_details"/>
                 <field name="contact_person"/>
-                <field name="personal_doctor"/>
+                <field name="personal_doctor_id"/>
             </tree>
         </field>
     </record>
@@ -73,12 +107,15 @@
             <form string="Patients">
                 <sheet>
                     <group>
+                        <field name="person_id"/>
                         <field name="name"/>
                         <field name="age"/>
                         <field name="gender"/>
                         <field name="passport_details"/>
                         <field name="contact_person"/>
-                        <field name="personal_doctor"/>
+                        <field name="personal_doctor_id" string="Personal Doctor"/>
+                        <field name="doctor_id" string="Appointment to Dr"/>
+                        <field name="date_time"/>
                     </group>
                 </sheet>
             </form>
@@ -93,6 +130,8 @@
             <tree string="Doctors">
                 <field name="name"/>
                 <field name="specialization"/>
+                <field name="is_intern"/>
+                <field name="mentor_doctor_id"/>
             </tree>
         </field>
     </record>
@@ -105,6 +144,8 @@
                     <group>
                         <field name="name"/>
                         <field name="specialization"/>
+                        <field name="is_intern"/>
+                        <field name="mentor_doctor_id"/>
                     </group>
                 </sheet>
             </form>
@@ -117,11 +158,12 @@
         <field name="model">hr_hospital.visits</field>
         <field name="arch" type="xml">
             <tree string="Visits">
-                <field name="patient"/>
-                <field name="doctor"/>
-                <field name="disease"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="diagnosis_ids" widget="many2many_tags"/>
                 <field name="description"/>
                 <field name="date"/>
+                <field name="appointment_is_done" />
             </tree>
         </field>
     </record>
@@ -132,11 +174,12 @@
             <form string="Visits">
                 <sheet>
                     <group>
-                        <field name="patient"/>
-                        <field name="doctor"/>
-                        <field name="disease"/>
+                        <field name="patient_id"/>
+                        <field name="doctor_id"/>
+                        <field name="diagnosis_ids" widget="many2many_tags"/>
                         <field name="description"/>
                         <field name="date"/>
+                        <field name="appointment_is_done" />
                     </group>
                 </sheet>
             </form>
@@ -181,5 +224,41 @@
         </field>
     </record>
 
-  </data>
+    <!-- Representations for model Diagnosis -->
+    <record id="diagnosis_tree" model="ir.ui.view">
+        <field name="name">Diagnosis Tree</field>
+        <field name="model">hr_hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <tree string="Diagnosis">
+                <field name="date_of_diagnosis"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="disease_id"/>
+                <field name="treatment"/>
+                <field name="mentor_doctor_id"/>
+                <field name="comment"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="diagnosis_form" model="ir.ui.view">
+        <field name="name">Diagnosis Form</field>
+        <field name="model">hr_hospital.diagnosis</field>
+        <field name="arch" type="xml">
+            <form string="Diagnosis">
+                <sheet>
+                    <group>
+                        <field name="date_of_diagnosis"/>
+                        <field name="doctor_id"/>
+                        <field name="patient_id"/>
+                        <field name="disease_id"/>
+                        <field name="treatment"/>
+                        <field name="mentor_doctor_id"/>
+                        <field name="comment"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
 </odoo>

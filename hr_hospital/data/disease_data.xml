@@ -1,14 +1,12 @@
 <odoo>
-    <data>
-        <!-- Master data for Types of diseases -->
-        <record id="disease_type_1" model="hr_hospital.diseases">
-            <field name="name">Disease Type 1</field>
-        </record>
-        <record id="disease_type_2" model="hr_hospital.diseases">
-            <field name="name">Disease Type 2</field>
-        </record>
-        <record id="disease_type_3" model="hr_hospital.diseases">
-            <field name="name">Disease Type 3</field>
-        </record>
-    </data>
+    <!-- Master data for Types of diseases -->
+    <record id="disease_type_1" model="hr_hospital.diseases">
+        <field name="name">Disease Type 1</field>
+    </record>
+    <record id="disease_type_2" model="hr_hospital.diseases">
+        <field name="name">Disease Type 2</field>
+    </record>
+    <record id="disease_type_3" model="hr_hospital.diseases">
+        <field name="name">Disease Type 3</field>
+    </record>
 </odoo>
