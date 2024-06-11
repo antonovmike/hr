@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- View for Diseases Report Wizard form -->
+
+    <record id="diseases_report_form" model="ir.ui.view">
+        <field name="name">diseases.report.wizard.form</field>
+        <field name="model">diseases_report_wizard</field>
+
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="month" options="{'no_create': True}"/>
+                    <field name="year" options="{'no_create': True}"/>
+                    <field name="disease_id" options="{'no_create': True}"/>
+                    <field name="diseases_num" options="{'no_create': True}"/>
+                </group>
+                <footer>
+                    <button name="action_generate" 
+                        string="Generate" 
+                        type="object" 
+                        icon="fa-plus" 
+                        class="btn-primary"/>
+                    <button special="cancel" class="oe_link" string="Close"/>
+                </footer>
+            </form>
+        </field>
+
+    </record>
+
+</odoo>

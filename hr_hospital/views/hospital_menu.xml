@@ -1,41 +1,110 @@
 <odoo>
+
+    <!-- Actions -->
+
+    <record id="action_view_patients" model="ir.actions.act_window">
+        <field name="name">View Patients</field>
+        <field name="res_model">hr_hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="action_view_doctors" model="ir.actions.act_window">
+        <field name="name">View Doctors</field>
+        <field name="res_model">hr_hospital.doctor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="action_view_visits" model="ir.actions.act_window">
+        <field name="name">View Visits</field>
+        <field name="res_model">hr_hospital.visits</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="action_view_person" model="ir.actions.act_window">
+        <field name="name">View Persons</field>
+        <field name="res_model">hr_hospital.person</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="action_view_diagnosis" model="ir.actions.act_window">
+        <field name="name">View Diagnosis</field>
+        <field name="res_model">hr_hospital.diagnosis</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="action_view_doctor_schedule" model="ir.actions.act_window">
+        <field name="name">View Schedule</field>
+        <field name="res_model">hr_hospital.doctor_schedule</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="action_view_doctor_history" model="ir.actions.act_window">
+        <field name="name">View Doctor History</field>
+        <field name="res_model">hr_hospital.doctor_history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+
     <!-- Top menu item -->
     <menuitem name="Hospital" id="menu_hr_hospital" sequence="10" />
 
-    <!-- Sub-menu items -->
+
+    <!-- Hospital menu items -->
+    <menuitem name="Hospital" parent="menu_hr_hospital"
+              id="sub_menu_hr_hospital" sequence="1" />
+
+
+    <menuitem name="Extentions" parent="menu_hr_hospital"
+              id="sub_menu_hr_hospital_wizard" sequence="2" />
+
+
     <menuitem name="Patients" 
               id="menu_hr_hospital_patients" 
-              parent="menu_hr_hospital" 
+              parent="sub_menu_hr_hospital" 
               action="hr_hospital.action_view_patients" 
               sequence="10"/>
+
     <menuitem name="Doctors" 
               id="menu_hr_hospital_doctors" 
-              parent="menu_hr_hospital" 
+              parent="sub_menu_hr_hospital" 
               action="hr_hospital.action_view_doctors" 
               sequence="20"/>
+
     <menuitem name="Visits" 
               id="menu_hr_hospital_visits" 
-              parent="menu_hr_hospital" 
+              parent="sub_menu_hr_hospital" 
               action="hr_hospital.action_view_visits" 
               sequence="30"/>
+
     <menuitem name="Person" 
               id="menu_hr_hospital_person" 
-              parent="menu_hr_hospital" 
+              parent="sub_menu_hr_hospital" 
               action="hr_hospital.action_view_person" 
               sequence="40"/>
+
     <menuitem name="Diagnosis" 
               id="menu_hr_hospital_diagnosis" 
-              parent="menu_hr_hospital" 
+              parent="sub_menu_hr_hospital" 
               action="hr_hospital.action_view_diagnosis" 
               sequence="50"/>
+
     <menuitem name="Schedule" 
               id="menu_hr_hospital_doctor_schedule"
-              parent="menu_hr_hospital" 
+              parent="sub_menu_hr_hospital" 
               action="hr_hospital.action_view_doctor_schedule" 
               sequence="50"/>
+
     <menuitem name="Doctor History" 
               id="menu_hr_hospital_doctor_history"
-              parent="menu_hr_hospital" 
+              parent="sub_menu_hr_hospital" 
               action="hr_hospital.action_view_doctor_history" 
               sequence="50"/>
+
 </odoo>

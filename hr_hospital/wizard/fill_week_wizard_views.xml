@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- View for Fill Week Wizard form -->
+
+    <record id="fill_week_wizard_form" model="ir.ui.view">
+        <field name="name">fill_week.wizard.form</field>
+        <field name="model">fill_week_wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="doctor_id"/>
+                    <field name="year"/>
+                    <field name="month"/>
+                    <field name="weeks_odd_start_hour"/>
+                    <field name="weeks_odd_end_hour"/>
+                    <field name="weeks_even_start_hour"/>
+                    <field name="weeks_even_end_hour"/>
+                </group>
+                <footer>
+                    <button name="action_fill"
+                        string="Fill schedule"
+                        type="object"
+                        icon="fa-plus" 
+                        class="btn-primary"/>
+                    <button special="cancel" class="oe_link" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

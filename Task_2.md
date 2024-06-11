@@ -79,5 +79,3 @@ Hour of reception
 
 13. Create a wizard to transfer the appointment to the doctor. The wizard should dismiss the time and record to another time/date/doctor.
 
-14. Create a wizard to fill in doctor appointment times per week, make it possible to fill in different schedules on even/ odd week.
-
