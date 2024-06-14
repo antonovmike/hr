@@ -7,13 +7,22 @@ class Person(models.Model):
     _name = 'hr_hospital.person'
     _description = 'Person'
 
-    last_name = fields.Char(string="Last Name")
-    first_name = fields.Char(string="First Name")
-    date_of_birth = fields.Date(string="Date of Birth")
-    age = fields.Integer(compute='_compute_age', store=True)
+    last_name = fields.Char(
+        string="Last Name", 
+        required=True)
+    first_name = fields.Char(
+        string="First Name", 
+        required=True)
+    date_of_birth = fields.Date(
+        string="Date of Birth", 
+        required=True)
+    age = fields.Integer(
+        compute='_compute_age', 
+        store=True)
     gender = fields.Selection(
         default='other',
-        selection=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')])
+        selection=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')], 
+        required=True)
     phone = fields.Char(string="Phone")
     email = fields.Char(string="Email")
     photo = fields.Image()

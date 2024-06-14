@@ -1,56 +1,97 @@
 <odoo>
+
     <!-- Demo data for Doctor -->
+
     <record id="doctor_demo_1" model="hr_hospital.doctor">
         <field name="name">Dr. Alice</field>
         <field name="specialization">internist</field>
     </record>
+
     <record id="doctor_demo_2" model="hr_hospital.doctor">
         <field name="name">Dr. Bob</field>
         <field name="specialization">oculist</field>
     </record>
+
     <record id="doctor_demo_3" model="hr_hospital.doctor">
         <field name="name">Dr. Claire</field>
         <field name="specialization">surgeon</field>
     </record>
 
-    <!-- Demo data for Patient -->
-    <record id="patient_demo_1" model="hr_hospital.patient">
-        <field name="name">Daria</field>
-        <field name="age">95</field>
+
+    <!-- Demo data for Person -->
+
+    <record id="person_demo_1" model="hr_hospital.person">
+        <field name="last_name">Doe</field>
+        <field name="first_name">John</field>
+        <field name="date_of_birth">1990-01-01</field>
+        <field name="gender">male</field>
+        <field name="phone">1234567890</field>
+        <field name="email">john@example.com</field>
+        <field name="age">99</field>
+    </record>
+
+    <record id="person_demo_2" model="hr_hospital.person">
+        <field name="last_name">Smith</field>
+        <field name="first_name">Jane</field>
+        <field name="date_of_birth">1995-05-05</field>
         <field name="gender">female</field>
+        <field name="phone">0987654321</field>
+        <field name="email">jane@example.com</field>
+        <field name="age">99</field>
+    </record>
+
+    <record id="person_demo_3" model="hr_hospital.person">
+        <field name="last_name">Johnson</field>
+        <field name="first_name">Jade</field>
+        <field name="date_of_birth">2000-12-31</field>
+        <field name="gender">male</field>
+        <field name="phone">5555555555</field>
+        <field name="email">jade@example.com</field>
+        <field name="age">99</field>
+    </record>
+
+
+    <!-- Demo data for Patient -->
+
+    <record id="patient_demo_1" model="hr_hospital.patient">
+        <field name="person_id" ref="person_demo_1"/>
         <field name="passport_details">Passport 1</field>
         <field name="contact_person">Some contact person 1</field>
         <field name="personal_doctor_id" ref="doctor_demo_1"/>
     </record>
+
     <record id="patient_demo_2" model="hr_hospital.patient">
-        <field name="name">Eugene</field>
-        <field name="age">25</field>
-        <field name="gender">male</field>
+        <field name="person_id" ref="person_demo_2"/>
         <field name="passport_details">Passport 2</field>
         <field name="contact_person">Some contact person 2</field>
         <field name="personal_doctor_id" ref="doctor_demo_2"/>
     </record>
+
     <record id="patient_demo_3" model="hr_hospital.patient">
-        <field name="name">Ferris</field>
-        <field name="age">45</field>
-        <field name="gender">male</field>
+        <field name="person_id" ref="person_demo_3"/>
         <field name="passport_details">Passport 3</field>
         <field name="contact_person">Some contact person 3</field>
         <field name="personal_doctor_id" ref="doctor_demo_3"/>
     </record>
 
+
     <!-- Demo data for Types of diseases -->
+
     <record id="disease_demo_1" model="hr_hospital.diseases">
         <field name="name">Disease Type 1</field>
     </record>
+
     <record id="disease_demo_2" model="hr_hospital.diseases">
         <field name="name">Disease Type 2</field>
     </record>
+
     <record id="disease_demo_3" model="hr_hospital.diseases">
         <field name="name">Disease Type 3</field>
     </record>
 
+
     <!-- Demo data for Visits -->
+
     <record id="visit_demo_1" model="hr_hospital.visits">
         <field name="name">Visit 1</field>
         <field name="date">2024-05-28</field>
@@ -59,6 +100,7 @@
         <!-- <field name="diagnosis_ids" eval="[(6, 0, [1])]"/> -->
         <field name="description">Description 1</field>
     </record>
+
     <record id="visit_demo_2" model="hr_hospital.visits">
         <field name="name">Visit 2</field>
         <field name="date">2024-05-29</field>
@@ -67,6 +109,7 @@
         <!-- <field name="diagnosis_ids" eval="[(6, 0, [1])]"/> -->
         <field name="description">Description 2</field>
     </record>
+
     <record id="visit_demo_3" model="hr_hospital.visits">
         <field name="name">Visit 3</field>
         <field name="date">2024-05-30</field>
@@ -76,33 +119,9 @@
         <field name="description">Description 3</field>
     </record>
 
-    <!-- Demo data for Person -->
-    <record id="person_demo_1" model="hr_hospital.person">
-        <field name="last_name">Doe</field>
-        <field name="first_name">John</field>
-        <field name="date_of_birth">1990-01-01</field>
-        <field name="gender">male</field>
-        <field name="phone">1234567890</field>
-        <field name="email">john@example.com</field>
-    </record>
-    <record id="person_demo_2" model="hr_hospital.person">
-        <field name="last_name">Smith</field>
-        <field name="first_name">Jane</field>
-        <field name="date_of_birth">1995-05-05</field>
-        <field name="gender">female</field>
-        <field name="phone">0987654321</field>
-        <field name="email">jane@example.com</field>
-    </record>
-    <record id="person_demo_3" model="hr_hospital.person">
-        <field name="last_name">Johnson</field>
-        <field name="first_name">Jade</field>
-        <field name="date_of_birth">2000-12-31</field>
-        <field name="gender">male</field>
-        <field name="phone">5555555555</field>
-        <field name="email">jade@example.com</field>
-    </record>
 
     <!-- Demo data for Diagnosis -->
+
     <record id="diagnosis_demo_1" model="hr_hospital.diagnosis">
         <field name="date_of_diagnosis">2024-06-28</field>
         <field name="doctor_id" ref="doctor_demo_1"/>
@@ -110,6 +129,7 @@
         <field name="disease_id" ref="disease_demo_1"/>
         <field name="treatment">Treatment 1</field>
     </record>
+
     <record id="diagnosis_demo_2" model="hr_hospital.diagnosis">
         <field name="date_of_diagnosis">2024-06-29</field>
         <field name="doctor_id" ref="doctor_demo_2"/>
@@ -117,6 +137,7 @@
         <field name="disease_id" ref="disease_demo_2"/>
         <field name="treatment">Treatment 2</field>
     </record>
+
     <record id="diagnosis_demo_3" model="hr_hospital.diagnosis">
         <field name="date_of_diagnosis">2024-06-30</field>
         <field name="doctor_id" ref="doctor_demo_3"/>
@@ -124,4 +145,5 @@
         <field name="disease_id" ref="disease_demo_3"/>
         <field name="treatment">Treatment 3</field>
     </record>
+
 </odoo>
