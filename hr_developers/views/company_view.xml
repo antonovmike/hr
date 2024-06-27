@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Representations for model Company -->
+
+    <record id="view_company_tree" model="ir.ui.view">
+        <field name="name">Company Tree</field>
+        <field name="model">hr_developers.company</field>
+        <field name="arch" type="xml">
+            <tree string="Companies with Developers">
+                <field name="name"/>
+                <field name="city"/>
+                <field name="street"/>
+                <field name="state_id"/>
+                <field name="zip"/>
+                <field name="country_id"/>
+                <field name="employee_ids" 
+                       widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">Company Form</field>
+        <field name="model">hr_developers.company</field>
+        <field name="arch" type="xml">
+            <form string="Company">
+                <sheet>
+                    <group>
+                        <field name="name" 
+                               widget="many2one_tags"/>
+                        <field name="city"/>
+                        <field name="street"/>
+                        <field name="state_id"/>
+                        <field name="zip"/>
+                        <field name="country_id"/>
+                        <field name="employee_ids" 
+                               widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>
