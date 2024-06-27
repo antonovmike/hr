@@ -8,16 +8,15 @@ class Patient(models.Model):
     person_id = fields.Many2one(
         'hr_hospital.person', 
         required=True, 
-        string="Person")
-    name = fields.Char(string="Name", related='person_id.last_name')
-    age = fields.Integer(string='Age', related='person_id.age')
-    gender = fields.Selection(string='Gender', related='person_id.gender')
-    passport_details = fields.Char(string="Passport Details")
-    contact_person = fields.Char(string="Contact Person")
-    personal_doctor_id = fields.Many2one(
-        'hr_hospital.doctor', string="Personal Doctor")
+        string="Patient")
+    name = fields.Char(related='person_id.last_name')
+    age = fields.Integer(related='person_id.age')
+    gender = fields.Selection(related='person_id.gender')
+    passport_details = fields.Char()
+    contact_person = fields.Char()
+    personal_doctor_id = fields.Many2one('hr_hospital.doctor')
 
-    doctor_id = fields.Many2one('hr_hospital.doctor', string="Doctor")
+    doctor_id = fields.Many2one('hr_hospital.doctor')
     date_time = fields.Datetime(string="Date and Time")
 
     _sql_constraints = [

@@ -90,36 +90,6 @@
     </record>
 
 
-    <!-- Demo data for Visits -->
-
-    <record id="visit_demo_1" model="hr_hospital.visits">
-        <field name="name">Visit 1</field>
-        <field name="date">2024-05-28</field>
-        <field name="patient_id" ref="patient_demo_1"/>
-        <field name="doctor_id" ref="doctor_demo_1"/>
-        <!-- <field name="diagnosis_ids" eval="[(6, 0, [1])]"/> -->
-        <field name="description">Description 1</field>
-    </record>
-
-    <record id="visit_demo_2" model="hr_hospital.visits">
-        <field name="name">Visit 2</field>
-        <field name="date">2024-05-29</field>
-        <field name="patient_id" ref="patient_demo_2"/>
-        <field name="doctor_id" ref="doctor_demo_2"/>
-        <!-- <field name="diagnosis_ids" eval="[(6, 0, [1])]"/> -->
-        <field name="description">Description 2</field>
-    </record>
-
-    <record id="visit_demo_3" model="hr_hospital.visits">
-        <field name="name">Visit 3</field>
-        <field name="date">2024-05-30</field>
-        <field name="patient_id" ref="patient_demo_3"/>
-        <field name="doctor_id" ref="doctor_demo_3"/>
-        <!-- <field name="diagnosis_ids" eval="[(6, 0, [1])]"/> -->
-        <field name="description">Description 3</field>
-    </record>
-
-
     <!-- Demo data for Diagnosis -->
 
     <record id="diagnosis_demo_1" model="hr_hospital.diagnosis">
@@ -144,6 +114,35 @@
         <field name="patient_id" ref="patient_demo_3"/>
         <field name="disease_id" ref="disease_demo_3"/>
         <field name="treatment">Treatment 3</field>
+    </record>
+
+
+    <!-- Demo data for Visits -->
+    <!-- "eval" makes a link between a specific visit and a single diagnosis, replacing
+    any previous links of that visit with a new link to the specified diagnosis -->
+
+    <record id="visit_demo_1" model="hr_hospital.visits">
+        <field name="patient_id" ref="patient_demo_1"/>
+        <field name="doctor_id" ref="doctor_demo_1"/>
+        <field name="date">2024-08-01 10:00:00</field>
+        <field name="diagnosis_ids" eval="[(6, 0, [ref('diagnosis_demo_1')])]"/>
+        <field name="description">Description 1</field>
+    </record>
+
+    <record id="visit_demo_2" model="hr_hospital.visits">
+        <field name="patient_id" ref="patient_demo_2"/>
+        <field name="doctor_id" ref="doctor_demo_2"/>
+        <field name="date">2024-08-01 11:00:00</field>
+        <field name="diagnosis_ids" eval="[(6, 0, [ref('diagnosis_demo_2')])]"/>
+        <field name="description">Description 2</field>
+    </record>
+
+    <record id="visit_demo_3" model="hr_hospital.visits">
+        <field name="patient_id" ref="patient_demo_3"/>
+        <field name="doctor_id" ref="doctor_demo_3"/>
+        <field name="date">2024-08-01 12:00:00</field>
+        <field name="diagnosis_ids" eval="[(6, 0, [ref('diagnosis_demo_3')])]"/>
+        <field name="description">Description 3</field>
     </record>
 
 </odoo>

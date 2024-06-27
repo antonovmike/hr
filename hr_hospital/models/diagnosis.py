@@ -12,16 +12,32 @@ class Diagnosis(models.Model):
         required=True, 
         tracking=True)
     doctor_id = fields.Many2one(
-        'hr_hospital.doctor', string="Doctor",
-        required=True, tracking=True)
+        'hr_hospital.doctor',
+        required=True, 
+        tracking=True)
     patient_id = fields.Many2one(
-        'hr_hospital.patient', string="Patient", required=True)
+        'hr_hospital.patient', 
+        required=True)
     disease_id = fields.Many2one(
-        'hr_hospital.diseases', string="Disease", required=True)
-    treatment = fields.Char(string="Treatment", required=True)
-    mentor_doctor_id = fields.Many2one(
-        'hr_hospital.doctor', string="Mentor Doctor")
+        'hr_hospital.diseases', 
+        required=True)
+    treatment = fields.Char(required=True)
+    mentor_doctor_id = fields.Many2one('hr_hospital.doctor')
     comment = fields.Text(string="Comment from mentor doctor")
+
+    def name_get(self):
+        """
+        Returns a list of tuples containing the ID and name of each record in the current object.
+        So that the View Visits table displays Disease name and Treatment instead of IDs.
+
+        :return: A list of tuples where each tuple contains the ID and name of a record.
+        :rtype: list[tuple[int, str]]
+        """
+        result = []
+        for record in self:
+            name = "%s (%s)" % (record.disease_id.name, record.treatment)
+            result.append((record.id, name))
+        return result
 
     @api.constrains('doctor_id', 'mentor_doctor_id', 'comment')
     def _check_fields(self):
