@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_developers_admin,access_developers_admin,model_hr_developers_developers,base.group_system,1,1,1,1
-access_developers_user,access_developers_user,model_hr_developers_developers,base.group_user,1,1,0,0
-access_company_user,access_company_user,model_hr_developers_company,base.group_user,1,1,1,1
