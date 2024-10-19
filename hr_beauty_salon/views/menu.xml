@@ -1,0 +1,27 @@
+<odoo>
+
+    <!-- Actions -->
+    <record id="action_view_user" model="ir.actions.act_window">
+        <field name="name">View User</field>
+        <field name="res_model">hr_beauty_salon.user</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+
+    <!-- Top menu item -->
+    <menuitem name="Beauty Salon" id="menu_hr_beauty_salon" sequence="10" />
+
+
+    <!-- Menu items -->
+    <menuitem name="Beauty Salon" parent="menu_hr_beauty_salon"
+              id="sub_menu_hr_beauty_salon" sequence="1" />
+
+
+    <menuitem name="User" 
+              id="menu_beauty_salon_user" 
+              parent="sub_menu_hr_beauty_salon" 
+              action="hr_beauty_salon.action_view_user" 
+              sequence="10"/>
+
+</odoo>

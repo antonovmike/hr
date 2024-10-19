@@ -8,7 +8,7 @@
         <field name="model">hr_beauty_salon.user</field>
         <field name="arch" type="xml">
             <tree string="User">
-                
+                <field name="name"/>
             </tree>
         </field>
     </record>
@@ -20,7 +20,7 @@
             <form string="Users">
                 <sheet>
                     <group>
-                        
+                        <field name="name"/>
                     </group>
                 </sheet>
             </form>
